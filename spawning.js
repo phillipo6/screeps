@@ -20,7 +20,7 @@ for(var id in harvesters){
 
     if(harvesterlength < AmountOfHarvester) {
         if(Memory.SourceOne < Game.creeps.length/2){
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE], undefined, {role: 'harvester', SourceID: '579fa9210700be0674d2ecc3'});
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester', SourceID: '579fa9210700be0674d2ecc3'});
         Memory.SourceOne +=1;
         console.log('Spawning new harvester: ' + newName);
 

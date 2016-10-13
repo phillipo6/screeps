@@ -25,7 +25,7 @@ for(var id in harvesters){
         console.log('Spawning new harvester: ' + newName);
 
         }else{
-        var newName = Game.spawns['Spawn1'].createCreep([WORK,WORK,CARRY,MOVE,MOVE], undefined, {role: 'harvester', SourceID: '579fa9210700be0674d2ecc4'});
+        var newName = Game.spawns['Spawn1'].createCreep([WORK,CARRY,MOVE], undefined, {role: 'harvester', SourceID: '579fa9210700be0674d2ecc4'});
         console.log('Spawning new harvester: ' + newName);
         }
     }

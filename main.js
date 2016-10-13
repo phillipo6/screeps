@@ -28,8 +28,8 @@ module.exports.loop = function () {
             tower.attack(closestHostile);
         }
     }
-    var soonToDie = Game.creeps[0].ticksToLive;
-    var soonToDieName = Game.creeps[0].name;
+    var soonToDie = 99999;
+    var soonToDieName = '';
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {

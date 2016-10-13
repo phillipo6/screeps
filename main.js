@@ -45,7 +45,7 @@ module.exports.loop = function () {
             roleRepair.run(creep);
         }
         if(Memory.soonToDie.ticks){
-          if(creep.ticksToLive < Memory.soonToDie.ticks){
+          if(creep.ticksToLive < soonToDie){
             soonToDie = creep.ticksToLive;
             soonToDieName = name;
           }
@@ -54,5 +54,5 @@ module.exports.loop = function () {
           soonToDieName = name;
         }
     }
-    console.log('Next Creep to die: ' + soonToDieName);
+    console.log('Next Creep to die: ' + soonToDieName + ' with ' + soonToDie + ' ticks to live');
 }

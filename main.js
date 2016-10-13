@@ -1,8 +1,8 @@
-var roleHarvester = require('role.harvester.js');
-var roleUpgrader = require('role.upgrader.js');
-var roleBuilder = require('role.builder.js');
-var roleRepair = require('role.repair.js');
-var spawn = require('spawning.js');
+var roleHarvester = require('role.harvester');
+var roleUpgrader = require('role.upgrader');
+var roleBuilder = require('role.builder');
+var roleRepair = require('role.repair');
+var spawn = require('spawning');
 
 module.exports.loop = function () {
     for(var name in Memory.creeps) {

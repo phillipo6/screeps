@@ -5,6 +5,7 @@ var roleRepair = require('role.repair');
 var spawn = require('spawning');
 
 module.exports.loop = function () {
+    console.log('---------------------');
     for(var name in Memory.creeps) {
         if(!Game.creeps[name]) {
             delete Memory.creeps[name];
@@ -50,4 +51,5 @@ module.exports.loop = function () {
         }
     }
     console.log('Next Creep to die: ' + soonToDieName + ' with ' + soonToDie + ' ticks to live, creeps job is ' + Game.creeps[soonToDieName].memory.role);
+    console.log('---------------------');
 }

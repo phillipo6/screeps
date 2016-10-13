@@ -6,12 +6,15 @@ var AmountOfBuilder = 3;
 var AmountOfRepair = 2;
 var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
 var OldHarvester = _.filter(Game.creeps, (creep) => creep.memory.OldRole == 'harvester');
-
+Memory.SourceOne = 0;
 var harvesterlength = 0;
 for(var id in harvesters){
     var thisHarvester = harvesters[id];
     if(thisHarvester.memory.role == 'harvester' || thisHarvester.memory.OldRole == 'harvester'){
         harvesterlength += 1;
+    }
+    if(thisHarvester.memory.SourceID == '579fa9210700be0674d2ecc3'){
+        Memory.SourceOne += 1;
     }
 }
 

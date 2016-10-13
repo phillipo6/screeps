@@ -28,9 +28,6 @@ module.exports.loop = function () {
             tower.attack(closestHostile);
         }
     }
-    if(Memory.soonToDie.ticks == 0){
-      Memory.soonToDie = 9999999;
-    }
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {

@@ -28,7 +28,9 @@ module.exports.loop = function () {
             tower.attack(closestHostile);
         }
     }
-
+    if(Memory.soonToDie.ticks == 0){
+      Memory.soonToDie = 9999999;
+    }
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
@@ -43,5 +45,15 @@ module.exports.loop = function () {
         if(creep.memory.role == 'repair'){
             roleRepair.run(creep);
         }
+        if(Memory.soonToDie.ticks){
+          if(creep.ticksToLive < Memory.soonToDie.ticks){
+            Memory.soonToDie.ticks = creep.ticksToLive;
+            Memory.soonToDie.name = name;
+          }
+        }else{
+          Memory.soonToDie.ticks = creep.ticksToLive;
+          Memory.soonToDie.name = name;
+        }
     }
+    console.log('Next Creep to die: ' + Memory.soonToDie.name);
 }

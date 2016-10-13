@@ -1,10 +1,13 @@
 var roleRepair = {
     run: function(creep){
     if(creep.carry[RESOURCE_ENERGY] < 50 && creep.memory.refilled == false) {
-    var spawn = creep.pos.findClosestByRange(FIND_MY_SPAWNS);
-    var moveResult = creep.moveTo(spawn);
-    var transferResult = spawn.transferEnergy(creep);
-    creep.memory.refilled = true;
+    var source = creep.pos.findClosestByRange(FIND_SOURCES);
+    if(creep.harvest(source) == ERR_NOT_IN_RANGE){
+      creep.moveTo(source);
+    }
+    if(creep.carry[RESOURCE_ENERGY]){
+      creep.memory.refilled = true;
+    }
     }else if(creep.carry[RESOURCE_ENERGY] < 10){
         creep.memory.refilled = false;
     }

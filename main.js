@@ -31,6 +31,8 @@ module.exports.loop = function () {
     }
     var soonToDie = 99999;
     var soonToDieName = '';
+    var latestCreepTicks = 0;
+    var latestCreepName = '';
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
@@ -49,7 +51,12 @@ module.exports.loop = function () {
           soonToDie = creep.ticksToLive;
           soonToDieName = name;
         }
+        if(creep.ticksToLive > latestCreepTicks){
+          latestCreepName = name;
+          latestCreepTicks = creep.ticksToLive;
+        }
     }
     console.log('Next Creep to die: ' + soonToDieName + ' with ' + soonToDie + ' ticks to live, creeps job is ' + Game.creeps[soonToDieName].memory.role);
+    console.log('Latest Creep is : ' + latestCreepName + ' with ' + latestCreepTicks + ' ticks to live, creeps job is ' + Game.creeps[latestCreepName].memory.role);
     console.log('---------------------');
 }

@@ -1,6 +1,6 @@
 var spawnNew = {
     run: function() {
-var AmountOfHarvester = 10;
+var AmountOfHarvester = 6;
 var AmountOfUpgrader = 3;
 var AmountOfBuilder = 3;
 var AmountOfRepair = 2;

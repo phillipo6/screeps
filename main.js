@@ -57,6 +57,6 @@ module.exports.loop = function () {
         }
     }
     console.log('Next Creep to die: ' + soonToDieName + ' with ' + soonToDie + ' ticks to live, creeps job is ' + Game.creeps[soonToDieName].memory.role);
-    console.log('Latest Creep is : ' + latestCreepName + ' with ' + latestCreepTicks + ' ticks to live, creeps job is ' + Game.creeps[latestCreepName].memory.role);
+    console.log('Latest Creep is: ' + latestCreepName + ' with ' + latestCreepTicks + ' ticks to live, creeps job is ' + Game.creeps[latestCreepName].memory.role);
     console.log('---------------------');
 }

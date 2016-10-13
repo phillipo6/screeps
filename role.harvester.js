@@ -58,9 +58,6 @@ var roleHarvester = {
             creep.memory.OldRole = 'harvester';
             creep.say('Changing to Builder Role');
         }
-        if(creep.ticksToLive < 2 && creep.memory.SourceID == '579fa9210700be0674d2ecc3'){
-            Memory.SourceOne -= 1;
-        }
     }
 };
 

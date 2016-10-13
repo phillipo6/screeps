@@ -49,5 +49,5 @@ module.exports.loop = function () {
           soonToDieName = name;
         }
     }
-    console.log('Next Creep to die: ' + soonToDieName + ' with ' + soonToDie + ' ticks to live');
+    console.log('Next Creep to die: ' + soonToDieName + ' with ' + soonToDie + ' ticks to live, creeps job is ' + Game.creeps[soonToDieName].memory.role);
 }

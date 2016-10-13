@@ -57,7 +57,6 @@ for(var id in harvesters){
         console.log('Builder: ' + builders.length);
         console.log('Harvesters: ' + harvesterlength);
         console.log('Upgrader: ' + upgraders.length);
-        console.log('---------------------');
     }
 };
 module.exports = spawnNew;

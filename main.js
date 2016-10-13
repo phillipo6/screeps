@@ -28,8 +28,8 @@ module.exports.loop = function () {
             tower.attack(closestHostile);
         }
     }
-    var soonToDie;
-    var soonToDieName;
+    var soonToDie = Game.creeps[0].ticksToLive;
+    var soonToDieName = Game.creeps[0].name;
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
@@ -44,12 +44,7 @@ module.exports.loop = function () {
         if(creep.memory.role == 'repair'){
             roleRepair.run(creep);
         }
-        if(Memory.soonToDie.ticks){
-          if(creep.ticksToLive < soonToDie){
-            soonToDie = creep.ticksToLive;
-            soonToDieName = name;
-          }
-        }else{
+        if(creep.ticksToLive < soonToDie){
           soonToDie = creep.ticksToLive;
           soonToDieName = name;
         }
